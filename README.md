@@ -115,3 +115,26 @@ G --> End
 C --> End
 E --> End
 ```
+
+ej 5
+Este diagrama muestra los diferentes estados por los que puede pasar una reserva.
+Una reserva empieza en Pending, luego puede confirmarse, cancelarse, completarse si el socio asiste, o marcarse como NoShow si no se presenta.
+```mermaid
+stateDiagram-v2
+
+[*] --> Pending
+
+Pending --> Confirmed : confirm()
+
+Pending --> Cancelled : cancel()
+
+Confirmed --> Cancelled : cancel()
+
+Confirmed --> Completed : checkIn()
+
+Confirmed --> NoShow : classFinished()
+
+Completed --> [*]
+
+Cancelled --> [*]
+```
