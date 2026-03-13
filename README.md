@@ -1,4 +1,6 @@
 # Entornos-7.5_AGD
+ej 1
+
 ```mermaid
 flowchart LR
 
@@ -22,4 +24,34 @@ Member --> ReserveClass
 Administrator --> CreateClass
 Administrator --> CancelSession
 
+```
+ej 2
+
+```mermaid
+sequenceDiagram
+
+actor Member
+participant WebInterface
+participant ReservationManager
+participant Database
+
+Member ->> WebInterface: confirmReservation(classId)
+
+WebInterface ->> ReservationManager: requestReservation(memberId,classId)
+
+ReservationManager ->> Database: checkAvailability(classId)
+
+Database -->> ReservationManager: availabilityResult
+
+alt seats available
+
+ReservationManager -->> WebInterface: reservationConfirmed()
+WebInterface -->> Member: showSuccessMessage()
+
+else class full
+
+ReservationManager -->> WebInterface: classFull()
+WebInterface -->> Member: showWaitlistOption()
+
+end
 ```
