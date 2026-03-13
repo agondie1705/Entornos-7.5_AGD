@@ -55,3 +55,24 @@ WebInterface -->> Member: showWaitlistOption()
 
 end
 ```
+
+ej 3
+Este diagrama muestra la comunicación entre los objetos del sistema durante el proceso de reserva. Los números indican el orden en el que se envían los mensajes.
+```mermaid
+flowchart LR
+
+Member
+WebInterface
+ReservationManager
+Database
+
+Member -- "1: confirmReservation()" --> WebInterface
+
+WebInterface -- "1.1: requestReservation()" --> ReservationManager
+
+ReservationManager -- "1.2: checkAvailability()" --> Database
+
+Database -- "1.3: availabilityResult" --> ReservationManager
+
+ReservationManager -- "2: reservationConfirmed()" --> WebInterface
+```
