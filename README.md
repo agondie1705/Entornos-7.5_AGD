@@ -1,6 +1,6 @@
 # Entornos-7.5_AGD
 ej 1
-
+Muestra los actores (Member y Administrator) y las acciones que pueden hacer en el sistema GymMaster, como ver o reservar clases. También incluye login (include) y lista de espera (extend).
 ```mermaid
 flowchart LR
 
