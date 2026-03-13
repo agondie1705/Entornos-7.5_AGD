@@ -1,5 +1,5 @@
 # Entornos-7.5_AGD
-´´´mermaid
+```mermaid
 flowchart LR
 
 subgraph GymMasterSystem
@@ -22,4 +22,4 @@ Member --> ReserveClass
 Administrator --> CreateClass
 Administrator --> CancelSession
 
-´´´
+```
