@@ -76,3 +76,42 @@ Database -- "1.3: availabilityResult" --> ReservationManager
 
 ReservationManager -- "2: reservationConfirmed()" --> WebInterface
 ```
+
+ej4
+Este diagrama muestra el proceso de validación de una reserva. El sistema comprueba si el socio tiene la cuota pagada y si hay plazas antes de confirmar la reserva.
+```mermaid
+flowchart TD
+
+Start((Start))
+
+A[Receive reservation request]
+
+B{Membership paid}
+
+C[Reject reservation]
+
+D{Seats available}
+
+E[Add to waitlist]
+
+F[Lock seat]
+
+G[Send confirmation email]
+
+End((End))
+
+Start --> A
+A --> B
+
+B --> C
+B --> D
+
+D --> E
+D --> F
+
+F --> G
+G --> End
+
+C --> End
+E --> End
+```
