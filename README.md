@@ -26,7 +26,7 @@ Administrator --> CancelSession
 
 ```
 ej 2
-
+Muestra el proceso cuando un socio confirma una reserva. El sistema comprueba en la base de datos si hay plazas y confirma la reserva o informa que la clase está llena.
 ```mermaid
 sequenceDiagram
 
